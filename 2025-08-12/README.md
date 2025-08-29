@@ -1,30 +1,34 @@
-Base Check
-Given a string representing a number, and an integer base from 2 to 36, determine whether the number is valid in that base.
+Тоон суурь шалгах (Base Check)
+Өгөгдсөн тоог илэрхийлсэн тэмдэгт мөр (string) болон 2-оос 36 хүртэлх бүхэл тоон суурь (base)-ийг ашиглан, тухайн тоо нь өгөгдсөн сууриндаа хүчинтэй эсэхийг шалгах даалгавар байна.
 
-The string may contain integers, and uppercase or lowercase characters.
-The check should be case-insensitive.
-The base can be any number 2-36.
-A number is valid if every character is a valid digit in the given base.
-Example of valid digits for bases:
-Base 2: 0-1
-Base 8: 0-7
-Base 10: 0-9
-Base 16: 0-9 and A-F
-Base 36: 0-9 and A-Z
+Шалгах нөхцөлүүд
 
-1. isValidNumber("10101", 2) should return true.
-2. isValidNumber("10201", 2) should return false.
-3. isValidNumber("76543210", 8) should return true.
-4. isValidCode("9876543210", 8) should return false.
-5. isValidNumber("9876543210", 10) should return true.
-6. isValidNumber("ABC", 10) should return false.
-7. isValidNumber("ABC", 16) should return true.
-8. isValidNumber("Z", 36) should return true.
-9. isValidNumber("ABC", 20) should return true.
-10. isValidNumber("4B4BA9", 16) should return true.
-11. isValidNumber("5G3F8F", 16) should return false.
-12. isValidNumber("5G3F8F", 17) should return true.
-13. isValidNumber("abc", 10) should return false.
-14. isValidNumber("abc", 16) should return true.
-15. isValidNumber("AbC", 16) should return true.
-16. isValidNumber("z", 36) should return true.
+Тэмдэгт мөр нь тоо, том болон жижиг үсгүүдийг агуулж болно.
+Шалгахдаа том, жижиг үсгийг ялгахгүй (case-insensitive).
+2-оос 36 хүртэлх дурын суурь байж болно.
+Хүчинтэй тоо гэдэг нь түүний бүх тэмдэгт нь өгөгдсөн суурийн хүчинтэй цифр байхыг хэлнэ.
+
+Хүчинтэй цифрүүдийн жишээ
+
+Суурь 2: 0-1
+Суурь 8: 0-7
+Суурь 10: 0-9
+Суурь 16: 0-9 болон A-F
+Суурь 36: 0-9 болон A-Z
+
+1. isValidNumber("101011", 2) үнэн буцах ёстой.
+2. isValidNumber("10201", 2) худал буцах ёстой.
+3. isValidNumber("7654321010", 8) үнэнийг буцаах ёстой.
+4. isValidNumber("987654343210", 8) нь худал буцах ёстой.
+5. isValidNumber("98765432210", 10) үнэнийг буцаах ёстой.
+6. isValidNumber("ABC", 10) нь худал буцах ёстой.
+7. isValidNumber("ABC", 16) үнэн буцах ёстой.
+8. isValidNumber("Z", 36) нь үнэн буцах ёстой.
+9. isValidNumber("ABC", 20) үнэнийг буцаах ёстой.
+10. isValidNumber("4b4ba9", 16) үнэнийг буцаах ёстой.
+11. isValidNumber("5G3F8F", 16) нь худал буцах ёстой.
+12. isValidNumber("5G3F8F8F", 17) нь үнэн буцах ёстой.
+13. isValidNumber("ABC", 10) нь худал буцах ёстой.
+14. isValidNumber("ABC", 16) үнэн буцах ёстой.
+15. isValidNumber("ABC", 16) үнэн буцах ёстой.
+16. isValidNumber("Z", 36) нь үнэн буцах ёстой.
