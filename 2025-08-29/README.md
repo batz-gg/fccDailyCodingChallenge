@@ -1,4 +1,3 @@
-https://www.freecodecamp.org/learn/daily-coding-challenge/2025-08-29
 Лааны гэрэл
 Таны эхлүүлсэн лааны тоог илэрхийлсэн бүхэл тоо болон нэг шинийг үүсгэхэд хэдэн шатсан лаа хэрэгтэйг илэрхийлсэн бүхэл тоо өгөгджээ. чадахаараа ихийг бий болгох, шатааж дуусгасны дараах лааны тоог буцаана.
 
@@ -20,3 +19,5 @@ https://www.freecodecamp.org/learn/daily-coding-challenge/2025-08-29
 3. burnCandles(20, 3) => 29
 4. burnCandles(17, 4) => 22
 5. burnCandles(2345, 3) => 3517
+
+https://www.freecodecamp.org/learn/daily-coding-challenge/2025-08-29
