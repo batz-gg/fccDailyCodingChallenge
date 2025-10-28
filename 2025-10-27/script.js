@@ -19,8 +19,9 @@ function sequenceRecursive(n) {
   }
   return sequenceRecursive(n - 1) + n;
 }
+// RangeError: Maximum call stack size exceeded
 
 const start = performance.now();
-sequenceRecursive(100000);
+sequenceImproved(100000);
 const end = performance.now();
 console.log(`Duration: \n${end - start} ms`);
