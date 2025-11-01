@@ -30,14 +30,15 @@ function getCategory(code) {
   }
 }
 
-let output = 'Index\tCode\tCharacter\tCategory\tDescription\n';
+let output = 'Index\tCode\tDecimal\tCharacter\tCategory\tDescription\n';
 
 let index = 1;
 for (let i = 0; i <= 0xFFFF; i++) {
   const char = String.fromCharCode(i);
   if (!char.trim()) continue; // skip non-printable roughly
 
-  const code = 'U+' + i.toString(16).toUpperCase().padStart(4, '0');
+  const hexCode = 'U+' + i.toString(16).toUpperCase().padStart(4, '0');
+  const decimalCode = i; // this is the decimal representation
   const category = getCategory(i);
 
   let description;
@@ -47,7 +48,7 @@ for (let i = 0; i <= 0xFFFF; i++) {
     description = '<no name>';
   }
 
-  output += `${index}\t${code}\t${char}\t${category}\t${description}\n`;
+  output += `${index}\t${hexCode}\t${decimalCode}\t${char}\t${category}\t${description}\n`;
   index++;
 }
 
