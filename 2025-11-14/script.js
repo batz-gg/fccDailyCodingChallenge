@@ -1,19 +1,54 @@
-function shiftArray(arr, n) {
-  const len = arr.length;
-  if (len === 0) {
-      return [];
+function daysUntilWeekend(dateString) {
+  // Өдрийн дугаарыг авна (Ням = 0, Даваа = 1, ..., Баасан = 5, Бямба = 6)
+  const dayNumber = new Date(dateString).getDay(); 
+
+  // 0 (Ням) эсвэл 6 (Бямба) бол амралтын өдөр
+  if (dayNumber === 0 || dayNumber === 6) {
+    return "It's the weekend!";
   }
-  const effectiveShift = n % len;
-  const leftShiftAmount = (effectiveShift + len) % len;
-  return arr.slice(leftShiftAmount).concat(arr.slice(0, leftShiftAmount));
+
+  // Амралтын өдөр (Бямба буюу 6) хүртэл хэдэн хоног үлдсэнийг тооцох
+  // (6 - 1) = 5 хоног (Даваа бол)
+  // (6 - 5) = 1 хоног (Баасан бол)
+  const leftDay = 6 - dayNumber;
+
+  // Үр дүнг буцаах
+  return leftDay > 1 
+    ? `${leftDay} days until the weekend.` 
+    : `${leftDay} day until the weekend.`;
 }
 
-console.log(shiftArray([1, 2, 3], 1))
+console.log(daysUntilWeekend("2025-11-29")); // Бямба гараг
+console.log(daysUntilWeekend("2025-11-25")); // Мягмар гараг
+/*
+const getWeekDay = dateString => new Date(dateString).toLocaleString('en-US', { weekday: 'long' });
 
-// Алхам 1: Үр дүнтэй шилжүүлгийн тоог олох
-// n % len нь сөрөг тоо байж болох тул (n % len + len) % len гэж ашиглана.
-// Алхам 2: Зөвхөн зүүн тийш шилжүүлэх хэмжээг тооцоолох.
-// Энэ нь массиваас "хэдэн элементийг эхнээс нь тасдаж, сүүлд нь залгах" тоо юм.
-// Шинэ массив үүсгэх:
-// 1. Зүүн тийш шилжүүлсний дараа шинээр эхлэх хэсэг: arr.slice(leftShiftAmount)
-// 2. Эхэнд байгаад сүүлд шилжсэн хэсэг: arr.slice(0, leftShiftAmount)
+function daysUntilWeekend(dateString) {
+  if (
+    getWeekDay(dateString) === "Saturday" || 
+    getWeekDay(dateString) === "Sunday"
+  ) {
+    return "It's the weekend!";
+  }
+  let dayNumber = 0;
+  if (getWeekDay(dateString) === "Monday") {
+    dayNumber = 1;
+  }
+  if (getWeekDay(dateString) === "Tuesday") {
+    dayNumber = 2;
+  }
+  if (getWeekDay(dateString) === "Wednesday") {
+    dayNumber = 3;
+  }
+  if (getWeekDay(dateString) === "Thursday") {
+    dayNumber = 4;
+  }
+  if (getWeekDay(dateString) === "Friday") {
+    dayNumber = 5;
+  }
+  const leftDay = 6-dayNumber;
+  return leftDay > 1 ? `${leftDay} days until the weekend.` : `${leftDay} day until the weekend.`
+}
+
+console.log(daysUntilWeekend("2025-11-29"))
+*/
