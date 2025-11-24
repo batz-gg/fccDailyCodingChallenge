@@ -4,10 +4,19 @@ function gcd(x, y) {
   const half = Math.floor(min / 2);
   for (let i = half; i > 0; i--) {
     // console.log(i)
-    if (x%i == 0 && y%i == 0){
+    if (x % i == 0 && y % i == 0) {
       return i;
     }
   }
 }
 
 console.log(gcd(20, 15))
+/*
+function gcd(a, b) {
+  // Евклидийн алгоритм
+  while (b) {
+    [a, b] = [b, a % b];
+  }
+  return a;
+}
+*/
