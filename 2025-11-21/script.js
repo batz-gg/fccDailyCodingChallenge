@@ -5,7 +5,7 @@ function lcm(a, b) {
   if (b % a == 0) {
     return b;
   };
-  for (let i = 1; i < 631; i++) {
+  for (let i = 1; ; i++) {
     if ((b * i) % a == 0) {
       return b * i;
     };
